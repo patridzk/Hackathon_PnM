@@ -1,0 +1,122 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ankaraKebab.png" />
+    <None Remove="deshiKebab.png" />
+    <None Remove="diamondKebab.png" />
+    <None Remove="disklejmer.jpg" />
+    <None Remove="kapucha.png" />
+    <None Remove="kapuchaKludka.png" />
+    <None Remove="kebabSpot.png" />
+    <None Remove="kulamocy.png" />
+    <None Remove="kulaMocyKludka.png" />
+    <None Remove="lezajskPKP.png" />
+    <None Remove="lezajskZdjecie.jpeg" />
+    <None Remove="makapakaakatortilla.png" />
+    <None Remove="makapakaakatortillaKludka.png" />
+    <None Remove="mapa.png" />
+    <None Remove="marwelKebab.png" />
+    <None Remove="mc.gif" />
+    <None Remove="metroKebab.png" />
+    <None Remove="nozycowanie.png" />
+    <None Remove="policjant.gif" />
+    <None Remove="scyzoruk.png" />
+    <None Remove="soslagodny.png" />
+    <None Remove="soslagodnyKludka.png" />
+    <None Remove="sosostry.png" />
+    <None Remove="sosostryKludka.png" />
+    <None Remove="tloMapa.png" />
+    <None Remove="tur.png" />
+    <None Remove="tur2.png" />
+    <None Remove="tur3.png" />
+    <None Remove="tur4.png" />
+    <None Remove="tur5.png" />
+    <None Remove="turduch.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="deshiKebab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="diamondKebab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="kapuchaKludka.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="kebabSpot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="kulaMocyKludka.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="makapakaakatortillaKludka.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="marwelKebab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="metroKebab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scyzoruk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="soslagodnyKludka.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sosostryKludka.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ankaraKebab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tur3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tur4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tur5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="turduch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="disklejmer.jpg" />
+    <Resource Include="kapucha.png" />
+    <Resource Include="kulamocy.png" />
+    <Resource Include="lezajskPKP.png" />
+    <Resource Include="lezajskZdjecie.jpeg" />
+    <Resource Include="makapakaakatortilla.png" />
+    <Resource Include="mapa.png" />
+    <Resource Include="mc.gif" />
+    <Content Include="policjant.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="nozycowanie.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="soslagodny.png" />
+    <Resource Include="sosostry.png" />
+    <Resource Include="tloMapa.png" />
+    <Content Include="tur.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tur2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,368 @@
+﻿<Window x:Class="lezajskGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:local="clr-namespace:lezajskGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280">
+    <Grid>
+        <StackPanel Name="Disclaimer" Visibility="Visible">
+            <Grid Height="705" Width="1280">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="/disklejmer.jpg" Stretch="Fill" Grid.RowSpan="5"/>
+                <Button Grid.Row="3" Grid.RowSpan="2" Height="100" Width="500" FontFamily="Comic Sans MS" FontSize="50" Click="Rozumiem">Rozumiem</Button>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="MainMenu" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Height="705" Width="1280">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/lezajskZdjecie.jpeg" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="5" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                <Border Grid.Column="1" Grid.ColumnSpan="3" Height="105" Width="768" Background="#BA9593" CornerRadius="30,30,30,30" BorderThickness="3" BorderBrush="#28190E">
+                    <TextBlock FontSize="50" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#28190E">Kebabowy magnat: Leżajsk</TextBlock>
+                </Border>
+                <Button Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Height="100" Width="768" Click="start">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="#BA9593" BorderBrush="#28190E" BorderThickness="3" CornerRadius="30,30,30,30">
+                                <TextBlock FontSize="50" Foreground="#28190E" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center">Start</TextBlock>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Height="100" Width="768">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="#BA9593" BorderBrush="#28190E" BorderThickness="3" CornerRadius="30,30,30,30">
+                                <TextBlock FontSize="50" Foreground="#28190E" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center">Historia Przygody</TextBlock>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Height="100" Width="768" Click="Exit">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="#BA9593" BorderBrush="#28190E" BorderThickness="3" CornerRadius="30,30,30,30">
+                                <TextBlock FontSize="50" Foreground="#28190E" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center">Wyjście z gry</TextBlock>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="mapa" Visibility="Collapsed">
+            <Grid>
+                <Image Source="/tloMapa.png"/>
+                <Canvas Height="705" Width="1280">
+                    <Button Height="25" Width="25" Canvas.Bottom="365" Canvas.Left="685" Name="poziom1" Click="poz1">1</Button>
+                    <Button Height="25" Width="25" Canvas.Bottom="355 " Canvas.Left="625" Name="poziom2" Click="poz2">2</Button>
+                    <Button Height="25" Width="25" Canvas.Bottom="292" Canvas.Left="640" Name="poziom3" Click="poz3">3</Button>
+                    <Button Height="25" Width="25" Canvas.Bottom="400" Canvas.Left="585" Name="poziom4" Click="poz4">4</Button>
+                    <Button Height="25" Width="25" Canvas.Bottom="320" Canvas.Left="550" Name="poziom5" Click="poz5">5</Button>
+                    <Button Height="25" Width="25" Canvas.Bottom="200" Canvas.Left="610" Name="poziom6" Click="poz6">6</Button>
+                    <Button Height="25" Width="25" Canvas.Bottom="430" Canvas.Left="500" Name="poziom7" Click="poz7">7</Button>
+                    <Button Height="25" Width="25" Canvas.Bottom="330" Canvas.Left="695" Name="poziom8" Click="poz8">8</Button>
+                    <Button Height="100" Width="250" Canvas.Bottom="0" Click="backToMenu" FontSize="30" FontFamily="Comic Sans MS">Powrót do menu</Button>
+                    <Image Source="/kulamocy.png" Height="80" Canvas.Top="0" Canvas.Right="5" Name="tal1"/>
+                    <Image Source="/kapucha.png" Height="80" Canvas.Top="100" Canvas.Right="5" Name="tal2"/>
+                    <Image Source="/makapakaakatortilla.png" Height="80" Canvas.Top="200" Canvas.Right="5" Name="tal3"/>
+                    <Image Source="/soslagodny.png" Height="80" Canvas.Top="300" Canvas.Right="5" Name="tal4"/>
+                    <Image Source="/sosostry.png" Height="80" Canvas.Top="400" Canvas.Right="5" Name="tal5"/>
+                </Canvas>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="lvl1" Visibility="Collapsed">
+            <Grid>
+                <Image Source="/lezajskPKP.png" Stretch="Fill"/>
+                <Canvas Height="705" Width="1280">
+                    <Rectangle Fill="Black" Height="75" Width="450"/>
+                    <TextBlock Name="hieronimHP1" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Left="85" FontSize="50" Foreground="White" Panel.ZIndex="1">HP</TextBlock>
+                    <TextBlock FontSize="50" Canvas.Left="200" Foreground="White">HIERONIM</TextBlock>
+                    
+                    <Rectangle Canvas.Right="16" Fill="Black" Height="75" Width="530"/>
+                    <TextBlock Canvas.Right="100" Name="ochroniarzHP" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Right="25" FontSize="50" Foreground="White">HP</TextBlock>
+                    <TextBlock Canvas.Left="750" FontSize="50" Foreground="White">OCHRONIARZ</TextBlock>
+
+                    <Image Source="/mc.gif" Canvas.Bottom="50"/>
+                    <Image Source="/policjant.gif" Canvas.Bottom="50" Canvas.Right="10"/>
+
+                    <Border Canvas.Bottom="0" Canvas.Left="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="scyzoryk1">
+                            <Image Source="/scyzoruk.png"/>
+                        </Button>
+                    </Border>
+                    <Border Canvas.Bottom="0" Canvas.Right="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="nozyczki1">
+                            <Image Source="/nozycowanie.png"/>
+                        </Button>
+                    </Border>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzDmgShow1" Canvas.Right="50" Canvas.Top="200" Visibility="Collapsed">-10</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzMissShow1" Canvas.Right="50" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczDmgShow1" Canvas.Right="150" Canvas.Top="200" Visibility="Collapsed">-5</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczMissShow1" Canvas.Right="150" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                </Canvas>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="lvl2" Visibility="Collapsed">
+            <Grid>
+                <Image Source="/ankaraKebab.png" Stretch="Fill"/>
+                <Canvas Height="705" Width="1280">
+                    <Rectangle Fill="Black" Height="75" Width="450"/>
+                    <TextBlock Name="hieronimHP2" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Left="85" FontSize="50" Foreground="White" Panel.ZIndex="1">HP</TextBlock>
+                    <TextBlock FontSize="50" Canvas.Left="200" Foreground="White">HIERONIM</TextBlock>
+
+                    <Rectangle Canvas.Right="16" Fill="Black" Height="75" Width="530"/>
+                    <TextBlock Canvas.Right="100" Name="Turek1HP" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Right="25" FontSize="50" Foreground="White">HP</TextBlock>
+                    <TextBlock Canvas.Left="750" FontSize="50" Foreground="White">Ankara Kebab</TextBlock>
+
+                    <Image Source="/mc.gif" Canvas.Bottom="50"/>
+                    <Image Source="/tur.png" Canvas.Bottom="50" Canvas.Right="10"/>
+
+                    <Border Canvas.Bottom="0" Canvas.Left="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="scyzoryk2">
+                            <Image Source="/scyzoruk.png"/>
+                        </Button>
+                    </Border>
+                    <Border Canvas.Bottom="0" Canvas.Right="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="nozyczki2">
+                            <Image Source="/nozycowanie.png"/>
+                        </Button>
+                    </Border>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzDmgShow2" Canvas.Right="50" Canvas.Top="200" Visibility="Collapsed">-10</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzMissShow2" Canvas.Right="50" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczDmgShow2" Canvas.Right="150" Canvas.Top="200" Visibility="Collapsed">-5</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczMissShow2" Canvas.Right="150" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                </Canvas>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="lvl3" Visibility="Collapsed">
+            <Grid>
+                <Image Source="/diamondKebab.png" Stretch="Fill"/>
+                <Canvas Height="705" Width="1280">
+                    <Rectangle Fill="Black" Height="75" Width="450"/>
+                    <TextBlock Name="hieronimHP3" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Left="85" FontSize="50" Foreground="White" Panel.ZIndex="1">HP</TextBlock>
+                    <TextBlock FontSize="50" Canvas.Left="200" Foreground="White">HIERONIM</TextBlock>
+
+                    <Rectangle Canvas.Right="16" Fill="Black" Height="75" Width="530"/>
+                    <TextBlock Canvas.Right="100" Name="Turek2HP" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Right="25" FontSize="50" Foreground="White">HP</TextBlock>
+                    <TextBlock Canvas.Left="750" FontSize="50" Foreground="White">Diamond Kebab</TextBlock>
+
+                    <Image Source="/mc.gif" Canvas.Bottom="50"/>
+                    <Image Source="/tur2.png" Canvas.Bottom="50" Canvas.Right="10"/>
+
+                    <Border Canvas.Bottom="0" Canvas.Left="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="scyzoryk3">
+                            <Image Source="/scyzoruk.png"/>
+                        </Button>
+                    </Border>
+                    <Border Canvas.Bottom="0" Canvas.Right="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="nozyczki3">
+                            <Image Source="/nozycowanie.png"/>
+                        </Button>
+                    </Border>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzDmgShow3" Canvas.Right="50" Canvas.Top="200" Visibility="Collapsed">-10</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzMissShow3" Canvas.Right="50" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczDmgShow3" Canvas.Right="150" Canvas.Top="200" Visibility="Collapsed">-5</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczMissShow3" Canvas.Right="150" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                </Canvas>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="lvl4" Visibility="Collapsed">
+            <Grid>
+                <Image Source="/marwelKebab.png" Stretch="Fill"/>
+                <Canvas Height="705" Width="1280">
+                    <Rectangle Fill="Black" Height="75" Width="450"/>
+                    <TextBlock Name="hieronimHP4" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Left="85" FontSize="50" Foreground="White" Panel.ZIndex="1">HP</TextBlock>
+                    <TextBlock FontSize="50" Canvas.Left="200" Foreground="White">HIERONIM</TextBlock>
+
+                    <Rectangle Canvas.Right="16" Fill="Black" Height="75" Width="530"/>
+                    <TextBlock Canvas.Right="100" Name="Turek3HP" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Right="25" FontSize="50" Foreground="White">HP</TextBlock>
+                    <TextBlock Canvas.Left="750" FontSize="50" Foreground="White">Marwel Kebab</TextBlock>
+
+                    <Image Source="/mc.gif" Canvas.Bottom="50"/>
+                    <Image Source="/tur3.png" Canvas.Bottom="50" Canvas.Right="10"/>
+
+                    <Border Canvas.Bottom="0" Canvas.Left="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="scyzoryk4">
+                            <Image Source="/scyzoruk.png"/>
+                        </Button>
+                    </Border>
+                    <Border Canvas.Bottom="0" Canvas.Right="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="nozyczki4">
+                            <Image Source="/nozycowanie.png"/>
+                        </Button>
+                    </Border>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzDmgShow4" Canvas.Right="50" Canvas.Top="200" Visibility="Collapsed">-10</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzMissShow4" Canvas.Right="50" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczDmgShow4" Canvas.Right="150" Canvas.Top="200" Visibility="Collapsed">-5</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczMissShow4" Canvas.Right="150" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                </Canvas>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="lvl5" Visibility="Collapsed">
+            <Grid>
+                <Image Source="/metroKebab.png" Stretch="Fill"/>
+                <Canvas Height="705" Width="1280">
+                    <Rectangle Fill="Black" Height="75" Width="450"/>
+                    <TextBlock Name="hieronimHP5" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Left="85" FontSize="50" Foreground="White" Panel.ZIndex="1">HP</TextBlock>
+                    <TextBlock FontSize="50" Canvas.Left="200" Foreground="White">HIERONIM</TextBlock>
+
+                    <Rectangle Canvas.Right="16" Fill="Black" Height="75" Width="530"/>
+                    <TextBlock Canvas.Right="100" Name="Turek4HP" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Right="25" FontSize="50" Foreground="White">HP</TextBlock>
+                    <TextBlock Canvas.Left="750" FontSize="50" Foreground="White">Metro Kebab</TextBlock>
+
+                    <Image Source="/mc.gif" Canvas.Bottom="50"/>
+                    <Image Source="/tur4.png" Canvas.Bottom="50" Canvas.Right="10"/>
+
+                    <Border Canvas.Bottom="0" Canvas.Left="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="scyzoryk5">
+                            <Image Source="/scyzoruk.png"/>
+                        </Button>
+                    </Border>
+                    <Border Canvas.Bottom="0" Canvas.Right="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="nozyczki5">
+                            <Image Source="/nozycowanie.png"/>
+                        </Button>
+                    </Border>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzDmgShow5" Canvas.Right="50" Canvas.Top="200" Visibility="Collapsed">-10</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzMissShow5" Canvas.Right="50" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczDmgShow5" Canvas.Right="150" Canvas.Top="200" Visibility="Collapsed">-5</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczMissShow5" Canvas.Right="150" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                </Canvas>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="lvl6" Visibility="Collapsed">
+            <Grid>
+                <Image Source="/kebabSpot.png" Stretch="Fill"/>
+                <Canvas Height="705" Width="1280">
+                    <Rectangle Fill="Black" Height="75" Width="450"/>
+                    <TextBlock Name="hieronimHP6" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Left="85" FontSize="50" Foreground="White" Panel.ZIndex="1">HP</TextBlock>
+                    <TextBlock FontSize="50" Canvas.Left="200" Foreground="White">HIERONIM</TextBlock>
+
+                    <Rectangle Canvas.Right="16" Fill="Black" Height="75" Width="530"/>
+                    <TextBlock Canvas.Right="100" Name="Turek5HP" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Right="25" FontSize="50" Foreground="White">HP</TextBlock>
+                    <TextBlock Canvas.Left="750" FontSize="50" Foreground="White">New Kebab Spot</TextBlock>
+
+                    <Image Source="/mc.gif" Canvas.Bottom="50"/>
+                    <Image Source="/tur5.png" Canvas.Bottom="50" Canvas.Right="10"/>
+
+                    <Border Canvas.Bottom="0" Canvas.Left="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="scyzoryk6">
+                            <Image Source="/scyzoruk.png"/>
+                        </Button>
+                    </Border>
+                    <Border Canvas.Bottom="0" Canvas.Right="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="nozyczki6">
+                            <Image Source="/nozycowanie.png"/>
+                        </Button>
+                    </Border>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzDmgShow6" Canvas.Right="50" Canvas.Top="200" Visibility="Collapsed">-10</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzMissShow6" Canvas.Right="50" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczDmgShow6" Canvas.Right="150" Canvas.Top="200" Visibility="Collapsed">-5</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczMissShow6" Canvas.Right="150" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                </Canvas>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="lvl7" Visibility="Collapsed">
+            <Grid>
+                <Image Source="/deshiKebab.png" Stretch="Fill"/>
+                <Canvas Height="705" Width="1280">
+                    <Rectangle Fill="Black" Height="75" Width="450"/>
+                    <TextBlock Name="hieronimHP7" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Left="85" FontSize="50" Foreground="White" Panel.ZIndex="1">HP</TextBlock>
+                    <TextBlock FontSize="50" Canvas.Left="200" Foreground="White">HIERONIM</TextBlock>
+
+                    <Rectangle Canvas.Right="16" Fill="Black" Height="75" Width="530"/>
+                    <TextBlock Canvas.Right="100" Name="Turek6HP" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Right="25" FontSize="50" Foreground="White">HP</TextBlock>
+                    <TextBlock Canvas.Left="750" FontSize="50" Foreground="White">Deshi Kebab</TextBlock>
+
+                    <Image Source="/mc.gif" Canvas.Bottom="50"/>
+                    <Image Source="/turduch.png" Canvas.Bottom="50" Canvas.Right="10"/>
+
+                    <Border Canvas.Bottom="0" Canvas.Left="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="scyzoryk7">
+                            <Image Source="/scyzoruk.png"/>
+                        </Button>
+                    </Border>
+                    <Border Canvas.Bottom="0" Canvas.Right="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="nozyczki7">
+                            <Image Source="/nozycowanie.png"/>
+                        </Button>
+                    </Border>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzDmgShow7" Canvas.Right="50" Canvas.Top="200" Visibility="Collapsed">-10</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzMissShow7" Canvas.Right="50" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczDmgShow7" Canvas.Right="150" Canvas.Top="200" Visibility="Collapsed">-5</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczMissShow7" Canvas.Right="150" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                </Canvas>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="lvl8" Visibility="Collapsed">
+            <Grid>
+                <Image Source="/lezajskPKP.png" Stretch="Fill"/>
+                <Canvas Height="705" Width="1280">
+                    <Rectangle Fill="Black" Height="75" Width="450"/>
+                    <TextBlock Name="hieronimHP8" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Left="85" FontSize="50" Foreground="White" Panel.ZIndex="1">HP</TextBlock>
+                    <TextBlock FontSize="50" Canvas.Left="200" Foreground="White">HIERONIM</TextBlock>
+
+                    <Rectangle Canvas.Right="16" Fill="Black" Height="75" Width="530"/>
+                    <TextBlock Canvas.Right="100" Name="TurekBossHP" FontSize="50" Foreground="White">0</TextBlock>
+                    <TextBlock Canvas.Right="25" FontSize="50" Foreground="White">HP</TextBlock>
+                    <TextBlock Canvas.Left="750" FontSize="50" Foreground="White">Kebab-boss</TextBlock>
+
+                    <Image Source="/mc.gif" Canvas.Bottom="50"/>
+                    <Image Source="/tur2.png" Canvas.Bottom="50" Canvas.Right="10"/>
+
+                    <Border Canvas.Bottom="0" Canvas.Left="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="scyzoryk8">
+                            <Image Source="/scyzoruk.png"/>
+                        </Button>
+                    </Border>
+                    <Border Canvas.Bottom="0" Canvas.Right="450" BorderThickness="3" BorderBrush="Black">
+                        <Button Click="nozyczki8">
+                            <Image Source="/nozycowanie.png"/>
+                        </Button>
+                    </Border>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzDmgShow8" Canvas.Right="50" Canvas.Top="200" Visibility="Collapsed">-10</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="scyzMissShow8" Canvas.Right="50" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczDmgShow8" Canvas.Right="150" Canvas.Top="200" Visibility="Collapsed">-5</TextBlock>
+                    <TextBlock FontSize="30" Foreground="Red" Name="nozyczMissShow8" Canvas.Right="150" Canvas.Top="150" Visibility="Collapsed">Pudło</TextBlock>
+                </Canvas>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
